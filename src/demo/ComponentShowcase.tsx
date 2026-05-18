@@ -1,5 +1,6 @@
 // src/demo/ComponentShowcase.tsx
 import { Button } from "../components/Button/Button";
+import { Input } from "../components/Input";
 
 export function ComponentShowcase() {
   return (
@@ -27,6 +28,21 @@ export function ComponentShowcase() {
         <Button variant="primary" disabled>
           Disabled
         </Button>
+      </section>
+      <section className="flex flex-col gap-3 items-start">
+        <h2 className="text-sm font-medium text-gray-500 uppercase tracking-wide">
+          Input
+        </h2>
+        <Input id="default" placeholder="Default" />
+        <Input id="large" placeholder="Large" size="lg" />
+        <Input id="invalid" placeholder="Invalid" isInvalid />
+        <Input id="disabled" placeholder="Disabled" disabled />
+        <Input
+          id="readonly"
+          placeholder="Read Only"
+          readOnly
+          value="Read only value"
+        />
       </section>
     </div>
   );
