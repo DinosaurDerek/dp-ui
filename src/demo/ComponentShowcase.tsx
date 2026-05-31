@@ -2,6 +2,7 @@ import { useId } from "react";
 import { Button } from "../components/Button/Button";
 import { Input } from "../components/Input";
 import { FormField } from "../components/FormField/FormField";
+import { Card } from "../components/Card";
 
 export function ComponentShowcase() {
   const emailId = useId();
@@ -67,6 +68,29 @@ export function ComponentShowcase() {
         >
           <Input id={nameId} isInvalid placeholder="Your name" />
         </FormField>
+      </section>
+      <section className="flex flex-col gap-3 w-80">
+        <h2 className="text-sm font-medium text-gray-500 uppercase tracking-wide">
+          Card
+        </h2>
+        <Card>
+          <p className="text-[var(--dp-color-text-default)]">
+            Basic card with default padding and surface styling.
+          </p>
+        </Card>
+        <Card>
+          <div className="flex flex-col gap-3">
+            <h3 className="text-[length:var(--dp-font-size-lg)] font-[var(--dp-font-weight-semibold)] text-[var(--dp-color-text-default)]">
+              Card with content
+            </h3>
+            <p className="text-[var(--dp-color-text-muted)]">
+              Cards are composable surfaces. Structure lives in the consumer.
+            </p>
+            <Button variant="primary" size="sm">
+              Action
+            </Button>
+          </div>
+        </Card>
       </section>
     </div>
   );
