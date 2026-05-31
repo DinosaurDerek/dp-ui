@@ -1,15 +1,17 @@
-import { useId } from "react";
+import { useId, useState } from "react";
 import { Button } from "../components/Button/Button";
 import { Input } from "../components/Input";
 import { FormField } from "../components/FormField/FormField";
 import { Card } from "../components/Card";
+import { Modal } from "../components/Modal";
 
 export function ComponentShowcase() {
   const emailId = useId();
   const nameId = useId();
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <div className="p-8 flex flex-col gap-8">
+    <div className="p-8 flex flex-col gap-8 items-center">
       <section className="flex flex-col gap-3 items-start">
         <h2 className="text-sm font-medium text-gray-500 uppercase tracking-wide">
           Button
@@ -91,6 +93,35 @@ export function ComponentShowcase() {
             </Button>
           </div>
         </Card>
+      </section>
+      <section className="flex flex-col gap-3 items-start">
+        <h2 className="text-sm font-medium text-gray-500 uppercase tracking-wide">
+          Modal
+        </h2>
+        <Button variant="primary" onClick={() => setModalOpen(true)}>
+          Open Modal
+        </Button>
+        <Modal
+          isOpen={modalOpen}
+          onClose={() => setModalOpen(false)}
+          title="Example Modal"
+          description="This demonstrates focus trapping, Escape to close, and portal rendering."
+        >
+          <p className="text-[var(--dp-color-text-default)]">
+            Tab through the interactive elements below. Focus is trapped inside.
+          </p>
+          <div className="mt-4 flex flex-col gap-3">
+            <Input id="modal-input" placeholder="Focusable input" />
+            <div className="flex gap-2 justify-end">
+              <Button variant="ghost" onClick={() => setModalOpen(false)}>
+                Cancel
+              </Button>
+              <Button variant="primary" onClick={() => setModalOpen(false)}>
+                Confirm
+              </Button>
+            </div>
+          </div>
+        </Modal>
       </section>
     </div>
   );
