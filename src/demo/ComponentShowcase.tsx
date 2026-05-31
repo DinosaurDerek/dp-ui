@@ -4,10 +4,12 @@ import { Input } from "../components/Input";
 import { FormField } from "../components/FormField/FormField";
 import { Card } from "../components/Card";
 import { Modal } from "../components/Modal";
+import { Select } from "../components/Select";
 
 export function ComponentShowcase() {
   const emailId = useId();
   const nameId = useId();
+  const roleId = useId();
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
@@ -70,6 +72,22 @@ export function ComponentShowcase() {
         >
           <Input id={nameId} isInvalid placeholder="Your name" />
         </FormField>
+        <FormField
+          label="Role"
+          htmlFor={roleId}
+          hint="Select your role"
+          required
+        >
+          <Select
+            id={roleId}
+            placeholder="Select a role"
+            options={[
+              { value: "eng", label: "Engineer" },
+              { value: "design", label: "Designer" },
+              { value: "pm", label: "Product Manager" },
+            ]}
+          />
+        </FormField>
       </section>
       <section className="flex flex-col gap-3 w-80">
         <h2 className="text-sm font-medium text-gray-500 uppercase tracking-wide">
@@ -122,6 +140,46 @@ export function ComponentShowcase() {
             </div>
           </div>
         </Modal>
+      </section>
+      <section className="flex flex-col gap-3 items-start">
+        <h2 className="text-sm font-medium text-gray-500 uppercase tracking-wide">
+          Select
+        </h2>
+        <div className="w-64">
+          <Select
+            placeholder="Choose a size"
+            options={[
+              { value: "sm", label: "Small" },
+              { value: "md", label: "Medium" },
+              { value: "lg", label: "Large" },
+            ]}
+          />
+        </div>
+        <div className="w-64">
+          <Select
+            size="lg"
+            placeholder="Large select"
+            options={[
+              { value: "a", label: "Option A" },
+              { value: "b", label: "Option B" },
+              { value: "c", label: "Option C", disabled: true },
+            ]}
+          />
+        </div>
+        <div className="w-64">
+          <Select
+            placeholder="Invalid state"
+            isInvalid
+            options={[{ value: "x", label: "Option X" }]}
+          />
+        </div>
+        <div className="w-64">
+          <Select
+            placeholder="Disabled"
+            disabled
+            options={[{ value: "x", label: "Option X" }]}
+          />
+        </div>
       </section>
     </div>
   );
