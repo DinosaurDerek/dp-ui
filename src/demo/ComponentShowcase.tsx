@@ -1,8 +1,12 @@
-// src/demo/ComponentShowcase.tsx
+import { useId } from "react";
 import { Button } from "../components/Button/Button";
 import { Input } from "../components/Input";
+import { FormField } from "../components/FormField/FormField";
 
 export function ComponentShowcase() {
+  const emailId = useId();
+  const nameId = useId();
+
   return (
     <div className="p-8 flex flex-col gap-8">
       <section className="flex flex-col gap-3 items-start">
@@ -43,6 +47,26 @@ export function ComponentShowcase() {
           readOnly
           value="Read only value"
         />
+      </section>
+      <section className="flex flex-col gap-3 w-80">
+        <h2 className="text-sm font-medium text-gray-500 uppercase tracking-wide">
+          FormField
+        </h2>
+        <FormField
+          label="Email"
+          htmlFor={emailId}
+          hint="We'll never share this"
+        >
+          <Input id={emailId} type="email" placeholder="you@example.com" />
+        </FormField>
+        <FormField
+          label="Name"
+          htmlFor={nameId}
+          error="Name is required"
+          required
+        >
+          <Input id={nameId} isInvalid placeholder="Your name" />
+        </FormField>
       </section>
     </div>
   );
