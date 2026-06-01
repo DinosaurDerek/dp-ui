@@ -21,7 +21,7 @@ const variantClasses: Record<string, string> = {
     "bg-transparent",
     "text-[var(--dp-color-text-default)]",
     "hover:bg-[var(--dp-color-surface-subtle)]",
-    "border border-transparent",
+    "border border-[var(--dp-color-border-strong)]",
   ].join(" "),
 
   destructive: [
