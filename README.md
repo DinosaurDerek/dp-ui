@@ -8,13 +8,13 @@ dp-ui is structured around a token-first design system. Tailwind is used interna
 
 ## Architecture
 
-​`
+```​
 src/
-  tokens/         # Design tokens — colors, spacing, typography, breakpoints
-  theme/          # Runtime theme system — context, provider, CSS variable injection
-  components/     # Reusable UI components
-  hooks/          # Shared behavioral primitives
-​`
+  tokens/       # Design tokens — colors, spacing, typography, breakpoints
+  theme/        # Runtime theme system — context, provider, CSS variable injection
+  components/   # Reusable UI components
+  hooks/        # Shared behavioral primitives
+```
 
 ### Token system
 
