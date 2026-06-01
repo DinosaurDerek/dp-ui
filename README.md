@@ -14,7 +14,6 @@ src/
   theme/          # Runtime theme system — context, provider, CSS variable injection
   components/     # Reusable UI components
   hooks/          # Shared behavioral primitives
-  demo/           # Composed demo application
 ​`
 
 ### Token system
@@ -30,30 +29,36 @@ The theme provider writes all tokens as CSS custom properties onto `:root` at ru
 
 ## Stack
 
-- React 18
+- React 19
 - TypeScript
 - Vite
-- Tailwind CSS (internal implementation detail — not exposed in component APIs.
-  Would be replaced with CSS Modules or zero-runtime CSS for a distributed package.)
+- Tailwind CSS (internal implementation detail — not exposed in component APIs. Would be replaced with CSS Modules or zero-runtime CSS for a distributed package.)
+- Storybook 10 (component development and documentation)
 
 ## Getting started
 
-​`bash
+```bash
 npm install
 npm run dev
-​`
+```
+
+To run Storybook:
+
+```bash
+npm run storybook
+```
 
 ## Components
 
 - Button
 - Input
+- FormField
 - Card
 - Modal
-- Dropdown
-- Tabs / Table
-- FormField
-- Toast / Tooltip
+- Select
 
 ## Status
 
-Early development. Not published. Not production-ready.
+Architectural reference implementation. Demonstrates design token architecture,
+runtime theming, and accessible component primitives. Not published as a package.
+Component development and documentation via Storybook.
