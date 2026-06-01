@@ -2,6 +2,8 @@
 
 A focused React component library built on a semantic design token architecture. Built with React, TypeScript, Vite, and Tailwind CSS.
 
+**Live demo:** [Storybook](https://dp-ui.vercel.app/)
+
 ## Overview
 
 dp-ui is structured around a token-first design system. Tailwind is used internally as an implementation detail — the public interface is expressed through semantic tokens and component props. Components never expose utility classes to consumers.
