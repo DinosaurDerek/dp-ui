@@ -32,7 +32,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       // Border states — order matters, more specific last
       isInvalid
         ? "border-[var(--dp-color-feedback-error-border)]"
-        : "border-[var(--dp-color-border-default)]",
+        : "border-[var(--dp-color-border-strong)]",
 
       // Focus ring
       readOnly

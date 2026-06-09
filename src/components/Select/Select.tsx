@@ -25,11 +25,11 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
     ref,
   ) => {
     const borderColor = isInvalid
-      ? "border-[var(--dp-color-feedback-error)]"
-      : "border-[var(--dp-color-border-default)]";
+      ? "border-[var(--dp-color-feedback-error-border)]"
+      : "border-[var(--dp-color-border-strong)]";
 
     const focusRing = isInvalid
-      ? "focus:ring-[var(--dp-color-feedback-error)]"
+      ? "focus:ring-[var(--dp-color-feedback-error-border)]"
       : "focus:ring-[var(--dp-color-interactive-primary)]";
 
     return (
